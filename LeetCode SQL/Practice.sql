@@ -124,3 +124,26 @@ SELECT    p.project_id,
 FROM      project p
 JOIN      employee e ON p.employee_id = e.employee_id
 GROUP BY  p.project_id;
+
+-- Dt. 06, Feb, 2025
+-- SORTING AND GROUPING
+-- 2356. Number of Unique Subjects Taught by Each Teacher
+-- Original approach
+SELECT    teacher_id,
+          COUNT(*) AS cnt
+FROM      (
+          SELECT    teacher_id,
+                    subject_id
+          FROM      teacher
+          GROUP BY  teacher_id,
+                    subject_id
+          ) AS new
+GROUP BY  teacher_id;
+
+-- Optimized approach
+SELECT    teacher_id,
+          COUNT(DISTINCT subject_id) AS cnt
+FROM      teacher
+GROUP BY  teacher_id;
+
+--
