@@ -13,7 +13,7 @@ A Database Management System (DBMS) is software that manages data storage, retri
 - DBMS Software - The core system handling data operations.
 - Database - Collection of structured data.
 
-##### Database Architecture? [\*](https -//www.guru99.com/dbms-architecture.html)
+##### Database Architecture? [\*](https//www.guru99.com/dbms-architecture.html)
 
 - One-Tier Architecture
   - The Client, Server, and Database all reside on the same machine
@@ -28,7 +28,7 @@ A Database Management System (DBMS) is software that manages data storage, retri
   - Involves a middle-tier for better abstraction and security.
   - Example - An online banking system uses a DBMS to store customer details, account balances, and transaction history. The customer interacts with the banking app (application layer), which communicates with the database via queries handled by the DBMS.
 
-## ER Models [\*](https -//www.geeksforgeeks.org/introduction-of-er-model/)
+## ER Models [\*](https//www.geeksforgeeks.org/introduction-of-er-model/)
 
 The Entity-Relationship (ER) Model is used to visually design databases before implementation.
 
@@ -75,7 +75,7 @@ The Entity-Relationship (ER) Model is used to visually design databases before i
 - Diamond - Relationship
 - Line - Connection between entities and attributes
 
-## ER to Relational Model [\*](https -//www.studytonight.com/dbms/er-to-relational-model.php)
+## ER to Relational Model [\*](https//www.studytonight.com/dbms/er-to-relational-model.php)
 
 ##### Conversion Process
 
@@ -85,7 +85,7 @@ The Entity-Relationship (ER) Model is used to visually design databases before i
 - Relationships are implemented using foreign keys.
 - Weak Entities require separate tables with foreign key dependencies.
 
-## Relational Algebra [\*](https -//www.studytonight.com/dbms/relational-algebra.php)
+## Relational Algebra [\*](https//www.studytonight.com/dbms/relational-algebra.php)
 
 Relational Algebra provides fundamental operations to query databases mathematically.
 
@@ -99,11 +99,11 @@ Relational Algebra provides fundamental operations to query databases mathematic
 - Cartesian Product (×) - Joins all records from both relations.
 - Join (⨝) - Combines related tuples based on common attributes.
 
-####### Real-World Example
+##### Real-World Example
 
 In an e-commerce platform, selection retrieves customers who purchased a specific product, projection extracts only customer names and emails, and join links orders with customer details.
 
-## Database Normalization [\*](https -//www.studytonight.com/dbms/database-normalization.php)
+## Database Normalization [\*](https//www.studytonight.com/dbms/database-normalization.php)
 
 Database Normalization ensures data consistency, removes redundancy, and improves efficiency.
 
@@ -520,3 +520,294 @@ I refered this site for a while and practiced on Sample database - [Check it out
 
 Later I switched to solve SQL queries on [LeetCode](/LeetCode%20SQL/Practice.sql)
 I will watch a video tutorial for advance topics in postgres tomorrow.
+
+##### Dt. 06 Feb, 2025.
+
+I watched a [Postgres One Shot](https://www.youtube.com/watch?v=cnzka7kF5Zk) video and summarized it as follows -
+
+### Usage of Different DBMS
+
+- **PostgreSQL**: Open-source, ACID-compliant, supports complex queries and JSON.
+- **MySQL**: Widely used for web applications, known for speed and reliability.
+- **Oracle DB**: Enterprise-grade, supports high-volume transactions and analytics.
+- **SQL Server**: Microsoft's relational database, used for enterprise applications.
+- **MongoDB**: NoSQL document-based DBMS, flexible schema for unstructured data.
+- **SQLite**: Lightweight, serverless, and commonly used for local storage.
+
+### Difference in Database, Schema, and Table
+
+- **Database**: A structured collection of data, storing multiple schemas and tables.
+- **Schema**: A logical grouping of database objects like tables, views, and functions.
+- **Table**: A structured collection of rows and columns storing specific data.
+
+### CRUD in Database
+
+- **Create**: Insert new records (`INSERT` statement).
+- **Read**: Retrieve data (`SELECT` statement).
+- **Update**: Modify existing records (`UPDATE` statement).
+- **Delete**: Remove records (`DELETE` statement).
+
+### Datatypes in PostgreSQL
+
+- **Integer Types**: `INTEGER`, `SMALLINT`, `BIGINT`
+- **Floating Point**: `REAL`, `DOUBLE PRECISION`
+- **String Types**: `TEXT`, `VARCHAR`, `CHAR`
+- **Boolean**: `BOOLEAN`
+- **Date/Time**: `DATE`, `TIMESTAMP`, `TIME`
+- **JSON**: `JSON`, `JSONB`
+- **Array**: `ARRAY`
+
+### Constraints in PostgreSQL
+
+- **PRIMARY KEY**: Uniquely identifies a record.
+- **FOREIGN KEY**: Ensures referential integrity.
+- **UNIQUE**: Prevents duplicate values.
+- **NOT NULL**: Ensures a column cannot have NULL values.
+- **CHECK**: Enforces custom conditions.
+
+### Serial
+
+`SERIAL` is an auto-incrementing integer type used for primary keys. Example:
+
+```sql
+CREATE TABLE users (id SERIAL PRIMARY KEY, name TEXT);
+```
+
+### Data Refining Clauses
+
+- **WHERE**: Filters rows.
+- **GROUP BY**: Groups data.
+- **HAVING**: Filters grouped data.
+- **ORDER BY**: Sorts results.
+- **DISTINCT**: Removes duplicates.
+
+### Operators
+
+- **Arithmetic**: `+`, `-`, `*`, `/`
+- **Comparison**: `=`, `!=`, `>`, `<`, `>=`, `<=`
+- **Logical**: `AND`, `OR`, `NOT`
+- **String**: `||` (concatenation)
+
+### Aggregate Functions
+
+- `COUNT()`: Counts rows.
+- `SUM()`: Adds values.
+- `AVG()`: Calculates average.
+- `MIN()`, `MAX()`: Finds min/max values.
+- `ARRAY_AGG()`: Aggregates values into an array.
+
+### String Functions
+
+- `LENGTH()`: Returns string length.
+- `LOWER()`, `UPPER()`: Converts case.
+- `CONCAT()`: Joins strings.
+- `TRIM()`: Removes whitespace.
+- `SUBSTRING()`: Extracts part of a string.
+
+### What is a Subquery?
+
+A query nested within another query, used in `SELECT`, `WHERE`, and `HAVING` clauses.
+Example:
+
+```sql
+SELECT name FROM employees WHERE salary > (SELECT AVG(salary) FROM employees);
+```
+
+### ALTER Query
+
+Used to modify database objects.
+Examples:
+
+- Add a column: `ALTER TABLE users ADD COLUMN age INT;`
+- Modify a column: `ALTER TABLE users ALTER COLUMN age TYPE BIGINT;`
+- Drop a column: `ALTER TABLE users DROP COLUMN age;`
+
+### CASE Expression
+
+Used for conditional logic in SQL.
+Example:
+
+```sql
+SELECT name, salary,
+CASE WHEN salary > 50000 THEN 'High' ELSE 'Low' END AS salary_category
+FROM employees;
+```
+
+### Joins
+
+- **INNER JOIN**: Returns matching rows.
+- **LEFT JOIN**: Returns all left-table rows, matching right-table rows.
+- **RIGHT JOIN**: Returns all right-table rows, matching left-table rows.
+- **FULL JOIN**: Returns all rows when a match exists.
+- **CROSS JOIN**: Returns Cartesian product.
+- **SELF JOIN**: Joins a table to itself.
+
+### Views
+
+A virtual table based on a query.
+Example:
+
+```sql
+CREATE VIEW active_users AS SELECT * FROM users WHERE status = 'active';
+```
+
+### HAVING Clause and GROUP ROLLUP
+
+- **HAVING**: Filters grouped results.
+- **ROLLUP**: Creates subtotals and grand totals.
+  Example:
+
+```sql
+SELECT department, SUM(salary) FROM employees GROUP BY ROLLUP(department);
+```
+
+### COALESCE
+
+Returns the first non-NULL value.
+Example:
+
+```sql
+SELECT COALESCE(NULL, 'Hello', 'World'); -- Returns 'Hello'
+```
+
+### Stored Routine
+
+A pre-written SQL block stored in the database. Includes:
+
+- **Stored Procedure**: Executes without returning a value.
+- **Stored Function**: Executes and returns a value.
+  Example:
+
+```sql
+CREATE FUNCTION get_salary(emp_id INT) RETURNS INT AS $$
+BEGIN RETURN (SELECT salary FROM employees WHERE id = emp_id);
+END; $$ LANGUAGE plpgsql;
+```
+
+### Window Functions
+
+Perform calculations over a set of rows.
+Examples:
+
+- `ROW_NUMBER() OVER (ORDER BY salary DESC)`
+- `SUM(salary) OVER (PARTITION BY department)`
+
+### What are CTEs?
+
+Common Table Expressions (CTEs) simplify complex queries.
+Example:
+
+```sql
+WITH department_salary AS (
+    SELECT department, SUM(salary) AS total_salary FROM employees GROUP BY department
+)
+SELECT * FROM department_salary WHERE total_salary > 100000;
+```
+
+### Triggers
+
+A function that executes automatically when an event occurs on a table.
+Example:
+
+```sql
+CREATE TRIGGER log_changes AFTER UPDATE ON employees FOR EACH ROW EXECUTE FUNCTION log_employee_changes();
+```
+
+## Advanced Topics in PostgreSQL -
+
+Some video references for advance topics are -
+
+- [15 SQL Interview Questions](https://www.youtube.com/watch?v=oX5Y26O5dBE)
+- Indexing -
+  - [Database Indexing Explained (with PostgreSQL)](https://www.youtube.com/watch?v=-qNSXK7s7_w)
+  - [How does indexing work in Databases in Hindi](https://www.youtube.com/watch?v=xXtig5uLQS4)
+- Triggers -
+  - [Postgres Triggers in a Nutshell](https://www.youtube.com/watch?v=l3rgdShkkfE)
+  - [Sql Triggers🔫 Real Life Example](https://www.youtube.com/watch?v=qr8QIZRHDaY)
+- Views -
+  - [SQL Views In 4 Minutes: Super Useful! Wow!](https://www.youtube.com/watch?v=vLLkNI-vkV8)
+  - [View in Database | Types of Views](https://www.youtube.com/watch?v=QngqhdLd1SE)
+- Materialized Views -
+  - [Faster SQL Queries using Materialized Views](https://www.youtube.com/watch?v=WzkBZ0byoYE)
+- Sequence -
+  - [SEQUENCE in SQL with Syntax](https://www.youtube.com/watch?v=EDZMYBNj7wM)
+- [5 Secrets for making PostgreSQL run BLAZING FAST. ](https://www.youtube.com/watch?v=YON9PliOYFk)
+
+## Summary of Imp Points -
+
+- **Schema** – A logical container for database objects like tables, views, indexes, and functions. Helps organize data and manage access control. Example: `public`, `sales_schema`.
+
+- **Constraint** – Rules enforced on table columns to ensure data integrity. Examples:
+
+  - `PRIMARY KEY` (ensures unique identifier)
+  - `FOREIGN KEY` (ensures referential integrity)
+  - `UNIQUE` (prevents duplicate values)
+  - `NOT NULL` (ensures a value is always provided)
+  - `CHECK` (enforces custom conditions)
+
+- **Table** – A structured collection of data stored in rows and columns. Each column has a specific datatype, and each row represents a record.
+
+- **Sequence** – A special database object that generates unique numbers, often used for auto-incrementing IDs. Example:
+
+  ```sql
+  CREATE SEQUENCE user_id_seq START WITH 1 INCREMENT BY 1;
+  ```
+
+- **View** – A virtual table based on a `SELECT` query. It doesn’t store data itself but presents data dynamically from underlying tables. Useful for simplifying complex queries.
+
+  ```sql
+  CREATE VIEW active_users AS
+  SELECT * FROM users WHERE status = 'active';
+  ```
+
+- **Stored Procedure** – A set of SQL statements stored and executed as a unit, often used for automation and business logic. Example:
+
+  ```sql
+  CREATE PROCEDURE increase_salary(emp_id INT, amount DECIMAL)
+  AS
+  BEGIN
+      UPDATE employees SET salary = salary + amount WHERE id = emp_id;
+  END;
+  ```
+
+- **Materialized View** – A physical copy of a query result stored in the database, used to improve performance. Unlike a regular view, it needs to be refreshed periodically.
+
+  - When query takes a lot of time and the table is modified rarely use materialized view
+
+  ```sql
+  CREATE MATERIALIZED VIEW sales_summary AS
+  SELECT region, SUM(sales) FROM orders GROUP BY region;
+  ```
+
+- **Trigger** – A function that executes automatically when an event (`INSERT`, `UPDATE`, `DELETE`) occurs on a table. Example:
+
+  ```sql
+  CREATE TRIGGER log_changes
+  AFTER UPDATE ON employees
+  FOR EACH ROW EXECUTE FUNCTION log_employee_changes();
+  ```
+
+- **Indexing** – A performance optimization technique that speeds up queries by creating a quick lookup structure.
+
+  - Use Explain Analyze keyword in Select query to see the difference.
+  - Use indexing only when data is read intensive not when write intensive.
+  - Example:
+
+  ```sql
+  CREATE INDEX idx_users_email ON users(email);
+  ```
+
+- **Information Schema** – A system database that stores metadata about tables, columns, constraints, indexes, and more. Example query to list all tables:
+  ```sql
+  SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';
+  ```
+
+## LMS SQL-DB Task
+
+After understanding the basic concepts of SQL, it is time to put my skills to test.
+
+I am starting the SQL-DB task on LMS. I will be using PostgreSQL. Good luck to me!
+
+Okay, so I have completed the task. You can have a look here - [SQL-DB](https://github.com/Tanishqua-Simform/SQL-DB)
+
+I practiced a query on [LeetCode](/LeetCode%20SQL/Practice.sql) although it was a bit complex so I could only manage to do 1 today. Calling it a day now! I will start MongoDB tomorrow.
