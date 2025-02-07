@@ -1,10 +1,16 @@
-# Database
+<a id="0"></a>
+
+# [Database](#1) | [PostgreSQL](#2) | [MongoDB](#3)
 
 We have developed good Front-end skills by now. It is time to get started with the Back-end!
 
 ##### Dt. 03 Feb, 2025.
 
-## Basic Concepts
+<a id="1"></a>
+
+## [Database](#0)
+
+##### Basic Concepts
 
 A Database Management System (DBMS) is software that manages data storage, retrieval, and manipulation efficiently. It consists of -
 
@@ -28,7 +34,7 @@ A Database Management System (DBMS) is software that manages data storage, retri
   - Involves a middle-tier for better abstraction and security.
   - Example - An online banking system uses a DBMS to store customer details, account balances, and transaction history. The customer interacts with the banking app (application layer), which communicates with the database via queries handled by the DBMS.
 
-## ER Models [\*](https//www.geeksforgeeks.org/introduction-of-er-model/)
+### ER Models [\*](https//www.geeksforgeeks.org/introduction-of-er-model/)
 
 The Entity-Relationship (ER) Model is used to visually design databases before implementation.
 
@@ -75,7 +81,7 @@ The Entity-Relationship (ER) Model is used to visually design databases before i
 - Diamond - Relationship
 - Line - Connection between entities and attributes
 
-## ER to Relational Model [\*](https//www.studytonight.com/dbms/er-to-relational-model.php)
+### ER to Relational Model [\*](https//www.studytonight.com/dbms/er-to-relational-model.php)
 
 ##### Conversion Process
 
@@ -85,7 +91,7 @@ The Entity-Relationship (ER) Model is used to visually design databases before i
 - Relationships are implemented using foreign keys.
 - Weak Entities require separate tables with foreign key dependencies.
 
-## Relational Algebra [\*](https//www.studytonight.com/dbms/relational-algebra.php)
+### Relational Algebra [\*](https//www.studytonight.com/dbms/relational-algebra.php)
 
 Relational Algebra provides fundamental operations to query databases mathematically.
 
@@ -103,7 +109,7 @@ Relational Algebra provides fundamental operations to query databases mathematic
 
 In an e-commerce platform, selection retrieves customers who purchased a specific product, projection extracts only customer names and emails, and join links orders with customer details.
 
-## Database Normalization [\*](https//www.studytonight.com/dbms/database-normalization.php)
+### Database Normalization [\*](https//www.studytonight.com/dbms/database-normalization.php)
 
 Database Normalization ensures data consistency, removes redundancy, and improves efficiency.
 
@@ -139,7 +145,7 @@ Today, I will be covering Transactions and concurrency control, indexing, B and 
 
 To refer [CodeHelp DBMS Notes.](https://drive.google.com/file/d/1y3KKghRhQjKfbWhvLipMOCCemKd_XdTm/view)
 
-## Transactions [\*](https://www.w3schools.in/dbms/transaction/)
+### Transactions [\*](https://www.w3schools.in/dbms/transaction/)
 
 A transaction in a database is a sequence of operations performed as a single logical unit of work. Transactions ensure data integrity and consistency even in the presence of failures or concurrent access.
 
@@ -147,18 +153,18 @@ A transaction in a database is a sequence of operations performed as a single lo
 
 ACID properties ensure the reliability of transactions in a database system.
 
-- **Atomicity** - A transaction is treated as a single unit that either completes fully or does not execute at all.
+- Atomicity - A transaction is treated as a single unit that either completes fully or does not execute at all.
   - Example - If a flight booking system fails after deducting payment but before confirming the ticket, the transaction is rolled back.
   - Implementation - Atomicity is implemented using rollback and commit operations. If a transaction fails, the system rolls back to its previous state. Transaction logs and undo operations ensure that incomplete transactions do not affect the database.
-- **Consistency** - Ensures the database transitions from one valid state to another without violating integrity constraints.
+- Consistency - Ensures the database transitions from one valid state to another without violating integrity constraints.
   - Example - A student database should not allow an entry for a student without assigning a unique ID.
-- **Isolation** - Transactions execute independently without interference from other transactions.
+- Isolation - Transactions execute independently without interference from other transactions.
   - Example - In an e-commerce system, two users placing orders at the same time should not interfere with each other’s stock updates.
   - Issues in Isolation -
     - Dirty Read - Occurs when a transaction reads uncommitted changes made by another transaction, leading to inconsistent data.
     - Non-Repeatable Read - Happens when a transaction reads the same row twice, but another transaction modifies the data between reads, leading to different results.
     - Phantom Read - Occurs when a transaction retrieves a set of rows, but another transaction inserts or deletes rows in the same range before the initial transaction completes.
-- **Durability** - Once a transaction is committed, changes persist even after system failures.
+- Durability - Once a transaction is committed, changes persist even after system failures.
   - Implementation - Durability is implemented using transaction logs and write-ahead logging (WAL). Once a transaction is committed, its changes are written to permanent storage.
   - Recovery Methods for Ensuring Durability -
     - Shadow Copy Scheme - Maintains two copies of the database - one active and one shadow.
@@ -226,7 +232,7 @@ Concurrency control mechanisms ensure that multiple transactions can execute sim
 - Optimistic/Validation-Based Concurrency Control - Transactions execute without locking but validate before committing.
   - Example - An online shopping cart allows multiple users to modify quantities, but final validation ensures stock consistency.
 
-## Indexing [\*](https://www.javatpoint.com/indexing-in-dbms)
+### Indexing [\*](https://www.javatpoint.com/indexing-in-dbms)
 
 Indexing is a technique used to optimize the performance of database queries by reducing the time required to retrieve data.
 
@@ -257,7 +263,7 @@ Indexing is a technique used to optimize the performance of database queries by 
 
 A library catalog system uses indexing to quickly find books based on title, author, or ISBN.
 
-## B and B+ Trees [\*](https://www.javatpoint.com/dbms-b-plus-tree)
+### B and B+ Trees [\*](https://www.javatpoint.com/dbms-b-plus-tree)
 
 B-trees and B+ trees are data structures used in database indexing to improve search efficiency.
 
@@ -277,7 +283,7 @@ B-trees and B+ trees are data structures used in database indexing to improve se
 
 Databases use B+ trees for indexing to allow quick searches on large datasets, such as retrieving all customers whose last names fall within a specific range.
 
-## File Organization in Database [\*](https://www.geeksforgeeks.org/file-organization-in-dbms-set-1/)
+### File Organization in Database [\*](https://www.geeksforgeeks.org/file-organization-in-dbms-set-1/)
 
 File organization refers to the method in which data is stored on physical storage devices. Proper file organization is essential for the performance of the database, affecting how efficiently data is accessed, modified, and managed.
 
@@ -308,7 +314,7 @@ File organization refers to the method in which data is stored on physical stora
   - Wasted space if records do not fully utilize the block.
   - Less efficient when records vary significantly in size.
 
-## SQL (Structured Query Language) [\*](https://www.guvi.com/blog/nosql-vs-sql-which-database-should-you-use/)
+### SQL (Structured Query Language) [\*](https://www.guvi.com/blog/nosql-vs-sql-which-database-should-you-use/)
 
 SQL is a standardized language used to manage and manipulate relational databases. It allows users to create, read, update, and delete (CRUD) data using structured commands.
 
@@ -347,7 +353,7 @@ WHERE order_status = 'Completed'
 ORDER BY order_date DESC;
 ```
 
-## NoSQL (Not Only SQL)
+### NoSQL (Not Only SQL)
 
 NoSQL databases are designed to handle unstructured and semi-structured data, providing flexibility and scalability for modern applications.
 
@@ -481,7 +487,9 @@ Tomorrow I will be learning more about Postgres and SQL Queries.
 Reference material for [PostgreSQL Neon](https://neon.tech/postgresql/tutorial) and [Playlist - Intro to postgres](https://www.youtube.com/playlist?list=PL-osiE80TeTsKOdPrKeSOp4rN3mza8VHN)
 I refered this site for a while and practiced on Sample database - [Check it out](/Postgres%20Practice/sampledb/tanishqua.sql)
 
-## PostgreSQL
+<a id="2"></a>
+
+## [PostgreSQL](#0)
 
 #### 1. Querying Data
 
@@ -527,43 +535,43 @@ I watched a [Postgres One Shot](https://www.youtube.com/watch?v=cnzka7kF5Zk) vid
 
 ### Usage of Different DBMS
 
-- **PostgreSQL**: Open-source, ACID-compliant, supports complex queries and JSON.
-- **MySQL**: Widely used for web applications, known for speed and reliability.
-- **Oracle DB**: Enterprise-grade, supports high-volume transactions and analytics.
-- **SQL Server**: Microsoft's relational database, used for enterprise applications.
-- **MongoDB**: NoSQL document-based DBMS, flexible schema for unstructured data.
-- **SQLite**: Lightweight, serverless, and commonly used for local storage.
+- PostgreSQL: Open-source, ACID-compliant, supports complex queries and JSON.
+- MySQL: Widely used for web applications, known for speed and reliability.
+- Oracle DB: Enterprise-grade, supports high-volume transactions and analytics.
+- SQL Server: Microsoft's relational database, used for enterprise applications.
+- MongoDB: NoSQL document-based DBMS, flexible schema for unstructured data.
+- SQLite: Lightweight, serverless, and commonly used for local storage.
 
 ### Difference in Database, Schema, and Table
 
-- **Database**: A structured collection of data, storing multiple schemas and tables.
-- **Schema**: A logical grouping of database objects like tables, views, and functions.
-- **Table**: A structured collection of rows and columns storing specific data.
+- Database: A structured collection of data, storing multiple schemas and tables.
+- Schema: A logical grouping of database objects like tables, views, and functions.
+- Table: A structured collection of rows and columns storing specific data.
 
 ### CRUD in Database
 
-- **Create**: Insert new records (`INSERT` statement).
-- **Read**: Retrieve data (`SELECT` statement).
-- **Update**: Modify existing records (`UPDATE` statement).
-- **Delete**: Remove records (`DELETE` statement).
+- Create: Insert new records (`INSERT` statement).
+- Read: Retrieve data (`SELECT` statement).
+- Update: Modify existing records (`UPDATE` statement).
+- Delete: Remove records (`DELETE` statement).
 
 ### Datatypes in PostgreSQL
 
-- **Integer Types**: `INTEGER`, `SMALLINT`, `BIGINT`
-- **Floating Point**: `REAL`, `DOUBLE PRECISION`
-- **String Types**: `TEXT`, `VARCHAR`, `CHAR`
-- **Boolean**: `BOOLEAN`
-- **Date/Time**: `DATE`, `TIMESTAMP`, `TIME`
-- **JSON**: `JSON`, `JSONB`
-- **Array**: `ARRAY`
+- Integer Types: `INTEGER`, `SMALLINT`, `BIGINT`
+- Floating Point: `REAL`, `DOUBLE PRECISION`
+- String Types: `TEXT`, `VARCHAR`, `CHAR`
+- Boolean: `BOOLEAN`
+- Date/Time: `DATE`, `TIMESTAMP`, `TIME`
+- JSON: `JSON`, `JSONB`
+- Array: `ARRAY`
 
 ### Constraints in PostgreSQL
 
-- **PRIMARY KEY**: Uniquely identifies a record.
-- **FOREIGN KEY**: Ensures referential integrity.
-- **UNIQUE**: Prevents duplicate values.
-- **NOT NULL**: Ensures a column cannot have NULL values.
-- **CHECK**: Enforces custom conditions.
+- PRIMARY KEY: Uniquely identifies a record.
+- FOREIGN KEY: Ensures referential integrity.
+- UNIQUE: Prevents duplicate values.
+- NOT NULL: Ensures a column cannot have NULL values.
+- CHECK: Enforces custom conditions.
 
 ### Serial
 
@@ -575,18 +583,18 @@ CREATE TABLE users (id SERIAL PRIMARY KEY, name TEXT);
 
 ### Data Refining Clauses
 
-- **WHERE**: Filters rows.
-- **GROUP BY**: Groups data.
-- **HAVING**: Filters grouped data.
-- **ORDER BY**: Sorts results.
-- **DISTINCT**: Removes duplicates.
+- WHERE: Filters rows.
+- GROUP BY: Groups data.
+- HAVING: Filters grouped data.
+- ORDER BY: Sorts results.
+- DISTINCT: Removes duplicates.
 
 ### Operators
 
-- **Arithmetic**: `+`, `-`, `*`, `/`
-- **Comparison**: `=`, `!=`, `>`, `<`, `>=`, `<=`
-- **Logical**: `AND`, `OR`, `NOT`
-- **String**: `||` (concatenation)
+- Arithmetic: `+`, `-`, `*`, `/`
+- Comparison: `=`, `!=`, `>`, `<`, `>=`, `<=`
+- Logical: `AND`, `OR`, `NOT`
+- String: `||` (concatenation)
 
 ### Aggregate Functions
 
@@ -635,12 +643,12 @@ FROM employees;
 
 ### Joins
 
-- **INNER JOIN**: Returns matching rows.
-- **LEFT JOIN**: Returns all left-table rows, matching right-table rows.
-- **RIGHT JOIN**: Returns all right-table rows, matching left-table rows.
-- **FULL JOIN**: Returns all rows when a match exists.
-- **CROSS JOIN**: Returns Cartesian product.
-- **SELF JOIN**: Joins a table to itself.
+- INNER JOIN: Returns matching rows.
+- LEFT JOIN: Returns all left-table rows, matching right-table rows.
+- RIGHT JOIN: Returns all right-table rows, matching left-table rows.
+- FULL JOIN: Returns all rows when a match exists.
+- CROSS JOIN: Returns Cartesian product.
+- SELF JOIN: Joins a table to itself.
 
 ### Views
 
@@ -653,8 +661,8 @@ CREATE VIEW active_users AS SELECT * FROM users WHERE status = 'active';
 
 ### HAVING Clause and GROUP ROLLUP
 
-- **HAVING**: Filters grouped results.
-- **ROLLUP**: Creates subtotals and grand totals.
+- HAVING: Filters grouped results.
+- ROLLUP: Creates subtotals and grand totals.
   Example:
 
 ```sql
@@ -674,8 +682,8 @@ SELECT COALESCE(NULL, 'Hello', 'World'); -- Returns 'Hello'
 
 A pre-written SQL block stored in the database. Includes:
 
-- **Stored Procedure**: Executes without returning a value.
-- **Stored Function**: Executes and returns a value.
+- Stored Procedure: Executes without returning a value.
+- Stored Function: Executes and returns a value.
   Example:
 
 ```sql
@@ -713,7 +721,7 @@ Example:
 CREATE TRIGGER log_changes AFTER UPDATE ON employees FOR EACH ROW EXECUTE FUNCTION log_employee_changes();
 ```
 
-## Advanced Topics in PostgreSQL -
+### Advanced Topics in PostgreSQL -
 
 Some video references for advance topics are -
 
@@ -733,11 +741,11 @@ Some video references for advance topics are -
   - [SEQUENCE in SQL with Syntax](https://www.youtube.com/watch?v=EDZMYBNj7wM)
 - [5 Secrets for making PostgreSQL run BLAZING FAST. ](https://www.youtube.com/watch?v=YON9PliOYFk)
 
-## Summary of Imp Points -
+### Summary of Imp Points -
 
-- **Schema** – A logical container for database objects like tables, views, indexes, and functions. Helps organize data and manage access control. Example: `public`, `sales_schema`.
+- Schema – A logical container for database objects like tables, views, indexes, and functions. Helps organize data and manage access control. Example: `public`, `sales_schema`.
 
-- **Constraint** – Rules enforced on table columns to ensure data integrity. Examples:
+- Constraint – Rules enforced on table columns to ensure data integrity. Examples:
 
   - `PRIMARY KEY` (ensures unique identifier)
   - `FOREIGN KEY` (ensures referential integrity)
@@ -745,22 +753,22 @@ Some video references for advance topics are -
   - `NOT NULL` (ensures a value is always provided)
   - `CHECK` (enforces custom conditions)
 
-- **Table** – A structured collection of data stored in rows and columns. Each column has a specific datatype, and each row represents a record.
+- Table – A structured collection of data stored in rows and columns. Each column has a specific datatype, and each row represents a record.
 
-- **Sequence** – A special database object that generates unique numbers, often used for auto-incrementing IDs. Example:
+- Sequence – A special database object that generates unique numbers, often used for auto-incrementing IDs. Example:
 
   ```sql
   CREATE SEQUENCE user_id_seq START WITH 1 INCREMENT BY 1;
   ```
 
-- **View** – A virtual table based on a `SELECT` query. It doesn’t store data itself but presents data dynamically from underlying tables. Useful for simplifying complex queries.
+- View – A virtual table based on a `SELECT` query. It doesn’t store data itself but presents data dynamically from underlying tables. Useful for simplifying complex queries.
 
   ```sql
   CREATE VIEW active_users AS
   SELECT * FROM users WHERE status = 'active';
   ```
 
-- **Stored Procedure** – A set of SQL statements stored and executed as a unit, often used for automation and business logic. Example:
+- Stored Procedure – A set of SQL statements stored and executed as a unit, often used for automation and business logic. Example:
 
   ```sql
   CREATE PROCEDURE increase_salary(emp_id INT, amount DECIMAL)
@@ -770,7 +778,7 @@ Some video references for advance topics are -
   END;
   ```
 
-- **Materialized View** – A physical copy of a query result stored in the database, used to improve performance. Unlike a regular view, it needs to be refreshed periodically.
+- Materialized View – A physical copy of a query result stored in the database, used to improve performance. Unlike a regular view, it needs to be refreshed periodically.
 
   - When query takes a lot of time and the table is modified rarely use materialized view
 
@@ -779,7 +787,7 @@ Some video references for advance topics are -
   SELECT region, SUM(sales) FROM orders GROUP BY region;
   ```
 
-- **Trigger** – A function that executes automatically when an event (`INSERT`, `UPDATE`, `DELETE`) occurs on a table. Example:
+- Trigger – A function that executes automatically when an event (`INSERT`, `UPDATE`, `DELETE`) occurs on a table. Example:
 
   ```sql
   CREATE TRIGGER log_changes
@@ -787,7 +795,7 @@ Some video references for advance topics are -
   FOR EACH ROW EXECUTE FUNCTION log_employee_changes();
   ```
 
-- **Indexing** – A performance optimization technique that speeds up queries by creating a quick lookup structure.
+- Indexing – A performance optimization technique that speeds up queries by creating a quick lookup structure.
 
   - Use Explain Analyze keyword in Select query to see the difference.
   - Use indexing only when data is read intensive not when write intensive.
@@ -797,12 +805,12 @@ Some video references for advance topics are -
   CREATE INDEX idx_users_email ON users(email);
   ```
 
-- **Information Schema** – A system database that stores metadata about tables, columns, constraints, indexes, and more. Example query to list all tables:
+- Information Schema – A system database that stores metadata about tables, columns, constraints, indexes, and more. Example query to list all tables:
   ```sql
   SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';
   ```
 
-## LMS SQL-DB Task
+### LMS SQL-DB Task
 
 After understanding the basic concepts of SQL, it is time to put my skills to test.
 
@@ -811,3 +819,230 @@ I am starting the SQL-DB task on LMS. I will be using PostgreSQL. Good luck to m
 Okay, so I have completed the task. You can have a look here - [SQL-DB](https://github.com/Tanishqua-Simform/SQL-DB)
 
 I practiced a query on [LeetCode](/LeetCode%20SQL/Practice.sql) although it was a bit complex so I could only manage to do 1 today. Calling it a day now! I will start MongoDB tomorrow.
+
+##### Dt. 07 Feb, 2025.
+
+<a id="3"></a>
+
+## [MongoDB](#0)
+
+I watched a [MongoDB One Shot](https://www.youtube.com/watch?v=tww-gbNPOcA) video and summarized it as follows -
+
+### What is MongoDB?
+
+MongoDB is a NoSQL database that stores data in flexible JSON-like documents. It provides high scalability, performance, and schema-less design, making it ideal for applications requiring dynamic and hierarchical data storage. It supports features like indexing, aggregation, and replication.
+
+### Basic Queries
+
+MongoDB provides basic queries such as `find()`, `insertOne()`, `updateOne()`, and `deleteOne()`. These queries allow users to retrieve, add, modify, and remove documents from collections efficiently.
+
+### What is MongoDB ATLAS?
+
+MongoDB Atlas is a fully managed cloud database service that allows users to deploy, manage, and scale MongoDB clusters easily. It provides automated backups, security, and performance monitoring.
+
+### Create & Drop Database, Collection
+
+To create/select a database, use `use dbName`. To create a collection, use `db.createCollection(name)`. To remove a collection, use `db.collection.drop()`. MongoDB creates databases and collections dynamically when data is inserted.
+
+### CRUD Operations in MongoDB
+
+#### CREATE
+
+Used to insert new documents.
+Example:
+`db.collection.insertOne({ name: 'John', age: 30 })`
+`db.collection.insertMany([{ name: 'Alice' }, { name: 'Bob' }])`
+
+Other Methods:
+
+- `save()`: Inserts a document, updating if `_id` exists
+- `insert()`: Bulk inserts multiple documents (deprecated in newer versions)
+
+#### READ
+
+Used to retrieve documents.
+Example:
+`db.collection.find({ age: { $gt: 25 } })`
+`db.collection.findOne({ name: 'John' })`
+
+Other Methods:
+
+- `.count()`: Counts the number of matching documents
+- `.distinct()`: Retrieves unique values for a field
+- `.find().pretty()`: Formats query output in a readable way
+
+#### UPDATE
+
+Used to modify existing documents.
+Example:
+`db.collection.updateOne({ name: 'John' }, { $set: { age: 35 } })`
+`db.collection.updateMany({ age: { $lt: 30 } }, { $set: { status: 'young' } })`
+
+Other Methods:
+
+- `$inc`: Increments a field’s value
+- `$rename`: Renames a field
+- `$unset`: Removes a field
+- `$push`: Adds an item to an array
+- `$pop`: Removes first or last element from an array
+
+#### DELETE
+
+Used to remove documents.
+Example:
+`db.collection.deleteOne({ name: 'Alice' })`
+`db.collection.deleteMany({ age: { $lt: 20 } })`
+
+Other Methods:
+
+- `remove({})`: Removes documents based on criteria (deprecated in newer versions)
+- `drop()`: Deletes an entire collection
+
+### DataTypes in MongoDB
+
+MongoDB supports multiple data types, including:
+
+- `String`: Stores textual data
+- `Number`: Stores integer or floating-point values
+- `Boolean`: Stores `true` or `false`
+- `Array`: Stores multiple values in a single field
+- `ObjectId`: Unique identifier for documents
+- `Date`: Stores date and time values
+- `Embedded Document`: Stores nested objects within a document
+
+### Operators in MongoDB
+
+- Comparison Operators
+
+  - Used to compare values.
+  - Examples: `$eq` (equal), `$ne` (not equal), `$gt` (greater than), `$lt` (less than)
+
+- Logical Operators
+
+  - Used to combine multiple conditions.
+  - Examples: `$and`, `$or`, `$not`, `$nor`
+
+- Element Operators
+
+  - Used to check for field existence and type.
+  - Examples: `$exists`, `$type`
+
+- Array Operators
+
+  - Used to perform operations on array fields.
+  - Examples:
+
+    - `$size`: Matches documents where an array has a specified number of elements
+    - `$all`: Matches documents where an array contains all specified elements
+    - `$elemMatch`: Matches documents where at least one array element satisfies a condition
+    - `$push`: Adds an element to an array field
+    - `$pull`: Removes elements from an array that match a condition
+
+- Date Operators
+
+  - Used to manipulate date values.
+  - Examples:
+
+    - `$currentDate`: Sets the field to the current date
+    - `$dateToString`: Converts a date to a string format
+    - `$dateFromString`: Converts a string to a date format
+    - `$year`, `$month`, `$dayOfMonth`, `$hour`, `$minute`, `$second`: Extract specific parts from a date
+    - `$add`: Adds time to a date field
+    - `$subtract`: Subtracts time from a date field
+
+### Cursor Method in MongoDB
+
+Cursors allow efficient data retrieval with methods like:
+
+- `.limit(n)`: Limits the number of returned documents
+- `.sort({ field: 1 })`: Sorts results in ascending order (-1 for descending)
+- `.skip(n)`: Skips the first `n` documents
+- `.forEach()`: Iterates over query results
+
+### Aggregate Framework in MongoDB
+
+Aggregation pipelines allow data transformation and computation.
+Common stages:
+
+- `$match`: Filters documents
+- `$group`: Groups data based on a field
+- `$sort`: Sorts the results
+- `$project`: Selects specific fields
+
+### Indexes in MongoDB
+
+Indexes improve query performance by allowing faster lookups. Common index types include:
+
+- Single-field indexes: Index on a single field to speed up queries.
+- Compound indexes: Index on multiple fields to improve query efficiency.
+- Text indexes: Used for full-text search.
+- Hashed indexes: Used for sharding and evenly distributing data.
+- Unique indexes: Ensure that field values are unique across documents.
+- Partial indexes: Apply to a subset of documents for optimization.
+
+Indexes significantly enhance read performance but may slow down write operations due to maintenance overhead.
+
+### Advance Topics -
+
+#### Transactions in MongoDB
+
+Transactions ensure ACID compliance for multi-document operations, ensuring consistency and rollback capabilities.
+
+#### Sharding in MongoDB
+
+Sharding distributes data across multiple servers, improving scalability and performance.
+
+#### Replica in MongoDB
+
+Replication provides data redundancy and high availability by maintaining multiple copies of data across different servers.
+
+##### Difference Between Sharding and Replica
+
+- Sharding is used to distribute large amounts of data across multiple servers to improve performance and scalability.
+- Replication is used to maintain copies of the same data on multiple servers to ensure high availability and fault tolerance.
+- Sharding splits the data into smaller parts (shards) and distributes them, while replication keeps full copies of the data.
+- Sharding is useful for handling massive datasets, whereas replication ensures data availability in case of failure.
+
+### PyMongo
+
+PyMongo is a Python library used to interact with MongoDB. It allows users to connect to MongoDB, perform CRUD operations, and execute queries efficiently.
+
+#### Installation
+
+`pip install pymongo`
+
+#### Connecting to MongoDB
+
+```python
+from pymongo import MongoClient
+client = MongoClient("mongodb://localhost:27017/")
+db = client["mydatabase"]
+```
+
+#### CRUD Operations in PyMongo
+
+- Insert: `db.collection.insert_one({"name": "Alice"})`
+- Find: `db.collection.find_one({"name": "Alice"})`
+- Update: `db.collection.update_one({"name": "Alice"}, {"$set": {"age": 25}})`
+- Delete: `db.collection.delete_one({"name": "Alice"})`
+
+PyMongo provides an easy way to manage MongoDB databases using Python.
+
+### Misc Tasks
+
+Watching the whole video got monotonous so I took a quiz on SQL from several platforms to freshen up and to test myself.
+
+- [Testdome](https://app.testdome.com/screening/challenge/12) -> [(Certificate)](https://www.testdome.com/certificates/617c179ee6db4a4abddf0acc1eb8bb7a)
+- [w3Schools](https://www.w3schools.com/quiztest/quiztest.asp?qtest=SQL)
+- [GFG](https://www.geeksforgeeks.org/sql-quiz/)
+
+I also created a command-line based [To-Do List](/To-Do%20List/) using PyMongo to implement CRUD operations.
+
+I read a few articles on MongoDb as well as skimmed through Documentation links provided on LMS.
+
+- [GFG - MongoDB: An introduction](https://www.geeksforgeeks.org/mongodb-an-introduction/?ref=gcse)
+- [GFG - MongoDB CRUD Operations](https://www.geeksforgeeks.org/mongodb-crud-operations/?ref=gcse)
+- [MongoDB Aggregate](https://www.mongodb.com/docs/manual/reference/method/db.collection.aggregate/)
+- [PyMongo Tutorial](https://pymongo.readthedocs.io/en/stable/tutorial.html)
+
+So that is it for today. Now, I will perform LMS MongoDB task on Monday.
