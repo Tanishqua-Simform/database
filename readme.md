@@ -1046,3 +1046,17 @@ I read a few articles on MongoDb as well as skimmed through Documentation links 
 - [PyMongo Tutorial](https://pymongo.readthedocs.io/en/stable/tutorial.html)
 
 So that is it for today. Now, I will perform LMS MongoDB task on Monday.
+
+##### Dt. 10 Feb, 2025.
+
+Okay then today I will perform mongoDB task and revise aggregations in MongoDB as well as PyMongo.
+
+### LMS MongoDB Task
+
+It is time to put my NoSQL skills to test. Wish me luck!
+
+Alright! I have successfully completed my MongoDB Task after extensive brainstorming. Here is the link to my [repo.](https://github.com/Tanishqua-Simform/MongoDB)
+
+Later, I revised [MongoDB aggregations](https://www.w3schools.com/mongodb/mongodb_aggregations_intro.php) and [PyMongo.](https://www.w3schools.com/python/python_mongodb_getstarted.asp) (Useful for quick reference.)
+
+##### With this we come to an end for our Database Course (Learning duration - 6 days).
