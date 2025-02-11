@@ -1059,4 +1059,14 @@ Alright! I have successfully completed my MongoDB Task after extensive brainstor
 
 Later, I revised [MongoDB aggregations](https://www.w3schools.com/mongodb/mongodb_aggregations_intro.php) and [PyMongo.](https://www.w3schools.com/python/python_mongodb_getstarted.asp) (Useful for quick reference.)
 
-##### With this we come to an end for our Database Course (Learning duration - 6 days).
+##### Dt. 11 Feb, 2025. (Extra Day)
+
+I had started python today but felt like practicing more SQL queries so here I am! Surprised to see me right? You'll be even more surprised to see my progress for the day.
+
+I practiced on Hackerrank this time. Solved around 45 queries and bagged gold badge. [Have a look.](https://www.hackerrank.com/profile/tanishqua_bansal)
+
+And, and, and, that's not it! I took 2 tests and well passed them both. Here are the certificates - [SQL Basic](https://www.hackerrank.com/certificates/fbcbebeddcf2) and [SQL Intermediate](https://www.hackerrank.com/certificates/f9720f113f7d)
+
+Switch to [python](https://github.com/Tanishqua-Simform/python) repo for further updates of the day.
+
+##### With this we come to an end for our Database Course (Learning duration - 6+1 days).
