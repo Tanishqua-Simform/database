@@ -146,4 +146,62 @@ SELECT    teacher_id,
 FROM      teacher
 GROUP BY  teacher_id;
 
---
+-- Dt. 21, Feb, 2025
+-- SUBQUERIES
+-- 1978. Employees Whose Manager Left the Company
+SELECT    employee_id
+FROM      employees
+WHERE     manager_id NOT IN (
+          SELECT    employee_id
+          FROM      employees
+          )
+AND       salary < 30000
+ORDER BY  employee_id;
+
+-- ADVANCED STRING FUNCTIONS
+-- 1667. Fix Names in a Table
+SELECT    user_id,
+          CONCAT(UPPER(LEFT(name, 1)), LOWER(SUBSTRING(name, 2))) AS name
+FROM      users
+ORDER BY  user_id;
+
+-- 1527. Patients With a Condition
+SELECT    patient_id,
+          patient_name,
+          conditions
+FROM      patients
+WHERE     conditions LIKE '% DIAB1%'
+OR        conditions LIKE 'DIAB1%';
+
+-- 196. Delete Duplicate Emails
+DELETE    FROM person
+WHERE     id NOT IN (
+          SELECT    MIN(id)
+          FROM      person
+          GROUP BY  email
+          );
+
+-- ADVANCED SELECT AND JOINS
+-- 1731. The Number of Employees Which Report to Each Employee
+SELECT    m.employee_id,
+          m.name,
+          COUNT(e.employee_id) AS reports_count,
+          ROUND(AVG(e.age)) AS average_age
+FROM      employees m
+JOIN      employees e ON m.employee_id = e.reports_to
+GROUP BY  m.employee_id,
+          m.name
+ORDER BY  employee_id;
+
+-- 1789. Primary Department for Each Employee
+-- Using Subquery
+SELECT    employee_id,
+          department_id
+FROM      employee
+WHERE     primary_flag = 'Y'
+OR        employee_id IN (
+          SELECT    employee_id
+          FROM      employee
+          GROUP BY  employee_id
+          HAVING    COUNT(department_id) = 1
+          );
