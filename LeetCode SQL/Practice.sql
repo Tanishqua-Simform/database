@@ -205,3 +205,21 @@ OR        employee_id IN (
           GROUP BY  employee_id
           HAVING    COUNT(department_id) = 1
           );
+
+-- Dt. 05, Mar, 2025
+-- BASIC JOINS 
+-- 1934. Confirmation Rate
+SELECT    s.user_id,
+          ROUND(ifnull (AVG(c.action = 'confirmed'), 0), 2) AS confirmation_rate
+FROM      signups AS s
+LEFT JOIN confirmations AS c ON s.user_id = c.user_id
+GROUP BY  s.user_id;
+
+-- ADVANCED STRING FUNCTIONS
+-- 176. Second Highest Salary
+SELECT    MAX(salary) AS secondhighestsalary
+FROM      employee
+WHERE     salary < (
+          SELECT    MAX(salary)
+          FROM      employee
+          );
